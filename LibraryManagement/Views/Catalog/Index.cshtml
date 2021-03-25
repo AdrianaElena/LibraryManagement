@@ -1,0 +1,38 @@
+﻿@model IEnumerable<LibraryManagement.Models.Catalog.AssetIndexListingModel>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Author / Director</th>
+                <th>Dewey Call Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="assetRow">
+                    <td>
+                        <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@item.Id">
+                            <img src="@item.ImageUrl" class="imageCell" width="70" height="90"/>
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AuthorOrDirector)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeweyCallNumber)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

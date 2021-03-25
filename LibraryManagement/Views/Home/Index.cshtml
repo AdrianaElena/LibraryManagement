@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container m-2">
+    <div class="text-center m-2">
+        <h1 class="display-4">Welcome</h1>
+    </div>
+</div>
+<br/>
+<br />
+<br />
+
+    <div class="row row-cols-1 row-cols-sm-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <a class="mdl-button mdl-button--colored" asp-controller="Catalog" asp-action="Index">
+                    <img src="/images/library.jpg" class="card-img-top " height="250" alt="...">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Catalog</h5>
+                    <p class="card-text"> View and manage library items</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <a class="mdl-button mdl-button--colored" asp-controller="Patron" asp-action="Index">
+                    <img src="/images/patrons.jpg" class="card-img-top categoryImage" height="250" alt="...">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Patrons</h5>
+                    <p class="card-text"> View Patron List</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <a class="mdl-button mdl-button--colored" asp-controller="Branch" asp-action="Index">
+                    <img src="/images/branches.jpg" class="card-img-top categoryImage" height="250" alt="...">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Branch</h5>
+                    <p class="card-text">View Library Branches</p>
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<LibraryManagement.Models.Branch.BranchDetailModel>
+
+
+<br/>
+<h3>Branch Index</h3>
+<br/>
+
+<div class="container">
+    <table class="table table-hover" >
+        <thead>
+            <tr>
+                <th> Branch Name</th>
+                <th> Open Now</th>
+                <th> Number of Assets</th>
+                <th> Number of Patrons</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var branch in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id">
+                            @branch.Name
+                        </a>
+                    </td>
+                    <td>@branch.IsOpen</td>
+                    <td>@branch.NumberOfAssets</td>
+                    <td>@branch.NumberOfPatrons</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
